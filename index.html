@@ -18,16 +18,13 @@ body{
 
 /* HERO SECTION */
 
-.hero{
-    height:100vh;
-    background-image:url('IMG_1.jpg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+.hero {
+    height: 100vh;
+    background-image: url('IMG_1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
 }
 
 .hero h1{
@@ -45,7 +42,7 @@ body{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(600px,1fr));
     gap:20px;
     padding:40px;
 }
