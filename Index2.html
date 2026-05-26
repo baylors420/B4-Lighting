@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>B4 Lighting</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+}
+
+/* TOP HERO SECTION */
+
+.hero{
+    height:100vh;
+    background-image:url('IMG_1.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:70px;
+    margin:0;
+}
+
+.hero p{
+    font-size:24px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>B4 Lighting</h1>
+    <p>Custom handmade lamps built from vintage, reclaimed, and modern parts.</p>
+</section>
+
+<section class="gallery">
+
+    <img src="IMG_2.jpg">
+    <img src="IMG_3.jpg">
+    <img src="IMG_4.jpg">
+    <img src="IMG_5.jpg">
+    <img src="IMG_6.jpg">
+
+</section>
+
+</body>
+</html>
