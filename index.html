@@ -103,10 +103,41 @@
   .contact-section {max-width:900px;border-top:2px solid #bb861f}
   @media(max-width:580px) {.hero {min-height:88vh;padding:14px 11px}.hero-frame{padding:34px 13px 24px}.brand-lockup{gap:8px}.brand-mascot{flex-basis:77px;width:77px}.brand-main{font-size:clamp(2.2rem,11vw,4rem)}.brand-sub{font-size:clamp(.98rem,4vw,1.5rem)}.hero-btn{width:100%}.hero h1{font-size:1.36rem}.bio-section{margin:16px 10px;padding:22px 16px}}
 
+
+  /* Approved homepage artwork: show exact composite when its original image is uploaded. */
+  .hero-approved {display:none;width:100%;height:auto;max-height:100vh;object-fit:contain;object-position:center;position:relative;z-index:1;}
+  .hero.has-approved {display:block;min-height:0;padding:0;background:#080808;}
+  .hero.has-approved::before,.hero.has-approved::after {display:none;}
+  .hero.has-approved .hero-frame {display:none;}
+  .hero.has-approved .hero-approved {display:block;}
+  .hero-approved-links {display:none;position:absolute;inset:0;z-index:2;pointer-events:none;}
+  .hero.has-approved .hero-approved-links {display:block;}
+  .hero-approved-links a {position:absolute;display:block;pointer-events:auto;}
+  .hero-approved-links a:focus-visible {outline:3px solid #fff2a2;outline-offset:3px;}
+  .hero-approved-links .nav-home {left:11%;top:1%;width:13%;height:7%;}
+  .hero-approved-links .nav-shop {left:26%;top:1%;width:12%;height:7%;}
+  .hero-approved-links .nav-featured {left:40%;top:1%;width:19%;height:7%;}
+  .hero-approved-links .nav-about {left:62%;top:1%;width:11%;height:7%;}
+  .hero-approved-links .nav-contact {left:75%;top:1%;width:12%;height:7%;}
+  .hero-approved-links .cta-shop {left:18%;top:79%;width:20%;height:9%;}
+  .hero-approved-links .cta-featured {left:39%;top:79%;width:22%;height:9%;}
+  .hero-approved-links .cta-contact {left:63%;top:79%;width:20%;height:9%;}
+  @media(max-width:580px){.hero.has-approved{min-height:0;padding:0;}}
 </style>
 </head>
 <body id="top">
 <header class="hero" aria-label="B4 Lighting welcome">
+  <img class="hero-approved" src="b4_homepage_backyard_preview.png" alt="Baylor's Custom Creations and B4 Lighting: handmade industrial lamps, in the backyard, with links to shop, featured lamps, and contact" onload="this.closest('.hero').classList.add('has-approved')" onerror="this.remove()">
+  <nav class="hero-approved-links" aria-label="Homepage navigation">
+    <a class="nav-home" href="#top" aria-label="Home"></a>
+    <a class="nav-shop" href="#collection" aria-label="Shop collection"></a>
+    <a class="nav-featured" href="#collection" aria-label="Featured lamps"></a>
+    <a class="nav-about" href="#about" aria-label="About"></a>
+    <a class="nav-contact" href="#contact" aria-label="Contact"></a>
+    <a class="cta-shop" href="#collection" aria-label="Shop the collection"></a>
+    <a class="cta-featured" href="#collection" aria-label="View featured lamps"></a>
+    <a class="cta-contact" href="#contact" aria-label="Contact"></a>
+  </nav>
   <div class="hero-frame">
     <p class="eyebrow">Handcrafted industrial lighting • One-of-a-kind designs</p>
     <div class="brand-lockup">
