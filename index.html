@@ -105,7 +105,7 @@
 
 
   /* Approved homepage artwork: show exact composite when its original image is uploaded. */
-  .hero-approved {display:none;width:100%;height:auto;max-height:100vh;object-fit:contain;object-position:center;position:relative;z-index:1;}
+  .hero-approved {display:none;width:100%;height:auto;object-fit:contain;object-position:center;position:relative;z-index:1;}
   .hero.has-approved {display:block;min-height:0;padding:0;background:#080808;}
   .hero.has-approved::before,.hero.has-approved::after {display:none;}
   .hero.has-approved .hero-frame {display:none;}
@@ -127,7 +127,7 @@
 </head>
 <body id="top">
 <header class="hero" aria-label="B4 Lighting welcome">
-  <img class="hero-approved" src="b4_homepage_backyard_preview.png" alt="Baylor's Custom Creations and B4 Lighting: handmade industrial lamps, in the backyard, with links to shop, featured lamps, and contact" onload="this.closest('.hero').classList.add('has-approved')" onerror="this.remove()">
+  <img class="hero-approved" src="website.png" alt="Baylor's Custom Creations and B4 Lighting: handmade industrial lamps, in the backyard, with links to shop, featured lamps, and contact" onload="this.closest('.hero').classList.add('has-approved')" onerror="this.remove()">
   <nav class="hero-approved-links" aria-label="Homepage navigation">
     <a class="nav-home" href="#top" aria-label="Home"></a>
     <a class="nav-shop" href="#collection" aria-label="Shop collection"></a>
