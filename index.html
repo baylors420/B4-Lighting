@@ -180,11 +180,8 @@
 <div class="bio-section">
 <p>For many years, I worked in the automotive industry, developing hands-on skills in repair, fabrication, and creative problem-solving. In 2025, I stepped away from the automotive industry. In 2026, I started B4 Lighting to turn my passion for building into something more personal. Today, I create one-of-a-kind custom lamps using a combination of vintage, reclaimed, and modern parts, giving each piece its own unique character and style. When I'm not in the workshop, I enjoy spending time with my wife, our dog Buddy—who's usually right by my side while I work—our kids Molly and Justin, and our newest addition to the family, our grandbaby Autumn.</p>
 <p>B4 Lighting proudly serves local customers with free delivery. You can also find a selection of our handcrafted lamps in person at Ragtime Antiques in Richland, Washington.</p>
-<p>I’d love to offer shipping, but because these lamps are handcrafted using solid wood, industrial pipe, and reclaimed materials, shipping costs have become so expensive that they can cost as much as—or even more than—the lamp itself.
-
-
-
-My goal is to keep my prices fair while ensuring each lamp arrives safely, so I’m currently offering local delivery only. I appreciate your support and understanding as B4 Lighting continues to grow.</p>
+<p>I’d love to offer shipping, but because these lamps are handcrafted using solid wood, industrial pipe, and reclaimed materials, shipping costs have become so expensive that they can cost as much as—or even more than—the lamp itself.</p>
+<p>My goal is to keep my prices fair while ensuring each lamp arrives safely, so I’m currently offering local delivery only. I appreciate your support and understanding as B4 Lighting continues to grow.</p>
 </div>
 <h2 class="section-heading" id="collection">The B4 Lighting Collection</h2>
 <div class="photo-stack"><div class="photo-item">
@@ -292,7 +289,7 @@ My goal is to keep my prices fair while ensuring each lamp arrives safely, so I�
     Have a question about a lamp or custom piece?<br/>
 <a href="tel:+15092052006">(509) 205-2006</a><br/>
 <a href="mailto:sales@b4lighting.com">sales@b4lighting.com</a><br/>
-Visit our lamps at <a href="https://www.google.com/maps/search/?api=1&amp;query=Ragtime+Antiques+1398+Jadwin+Ave+Richland+WA" rel="noopener" target="_blank">Ragtime Antiques, 1398 Jadwin Ave, Richland, WA</a><br/>
+Find our lamps at Ragtime Antiques in downtown Richland, WA<br/>
 <a href="https://www.b4lighting.com" rel="noopener" target="_blank">B4Lighting.com</a>
 </p>
 </section>
@@ -300,22 +297,22 @@ Visit our lamps at <a href="https://www.google.com/maps/search/?api=1&amp;query=
 
 <script>
 (function () {
-  const tried = new WeakMap();
-  const alternates = [".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG"];
-  document.querySelectorAll("img").forEach(function (img) {
+  // Avoid repeated failed requests if an image filename is unavailable.
+  const alternates = [".jpeg", ".jpg", ".png", ".JPG", ".JPEG", ".PNG"];
+  document.querySelectorAll(".photo-stack img").forEach(function (img) {
+    const original = img.getAttribute("src");
+    if (!original) return;
+    const base = original.replace(/\.(jpe?g|png)$/i, "");
+    const candidates = [original].concat(alternates.map(ext => base + ext))
+      .filter((value, index, array) => array.indexOf(value) === index);
+    let nextIndex = 0;
     img.addEventListener("error", function () {
-      const src = img.getAttribute("src");
-      if (!src) return;
-      const base = src.replace(/\.(jpe?g|png)$/i, "");
-      const currentTried = tried.get(img) || [];
-      for (const ext of alternates) {
-        const next = base + ext;
-        if (next !== src && !currentTried.includes(next)) {
-          currentTried.push(next);
-          tried.set(img, currentTried);
-          img.src = next;
-          return;
-        }
+      nextIndex += 1;
+      if (nextIndex < candidates.length) {
+        img.src = candidates[nextIndex];
+      } else {
+        img.alt = img.alt + " — photo currently unavailable";
+        img.removeAttribute("src");
       }
     });
   });
