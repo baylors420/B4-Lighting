@@ -61,20 +61,81 @@
 
   .paypal-button { display: inline-block; font-family: Georgia, serif; font-weight: bold; font-size: 1rem; color: #0d0a07; text-decoration: none; background: #f0cf63; border: 1px solid #c9a227; border-radius: 999px; padding: 12px 28px; box-shadow: 0 6px 16px rgba(0,0,0,0.28); transition: transform 0.15s ease, background 0.15s ease; }
   .paypal-button:hover { background: #ffd86b; transform: translateY(-1px); }
+
+  /* B4 Lighting black-and-gold workshop storefront */
+  :root { --gold:#ffd66a; --gold-deep:#b5770b; --cream:#fff1c8; }
+  body { background: radial-gradient(ellipse at top,#382309 0%,#100d0b 52%,#080808 100%); color:var(--cream); font-family:Georgia,"Times New Roman",serif; }
+  .hero { position:relative; min-height:94vh; display:flex; align-items:center; justify-content:center; padding:28px 18px; overflow:hidden; isolation:isolate; background:#100a08; }
+  .hero::before { content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(5,5,6,.76) 0%,rgba(9,6,5,.40) 47%,rgba(4,3,3,.94) 100%), url("IMG_9400.jpeg") center 58%/cover no-repeat; }
+  .hero::after { content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.75) 100%); }
+  .hero-frame { width:min(1120px,100%); padding:clamp(26px,5vw,66px) clamp(18px,4vw,55px) 35px; text-align:center; border:3px solid #dd9b21; outline:1px solid #fff2ac; outline-offset:-10px; box-shadow:0 0 0 6px #090706,0 0 38px #bd6a08a6,inset 0 0 42px #000; background:linear-gradient(135deg,#080706e8,#201305b5 50%,#060505e8);position:relative; }
+  .hero-frame::before,.hero-frame::after {content:"✦";position:absolute;color:#fff0a4;background:linear-gradient(145deg,#ffe69b,#be7b08);border:2px solid #593300;width:32px;height:32px;display:grid;place-items:center;box-shadow:0 0 12px #f5ad31;font-size:20px;top:-6px;}
+  .hero-frame::before{left:-6px}.hero-frame::after{right:-6px}
+  .eyebrow { color:#f5cd69;letter-spacing:.3em;text-transform:uppercase;font:700 clamp(.67rem,1.3vw,.87rem) Arial,sans-serif;margin-bottom:14px; }
+  .brand-lockup {display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,36px);margin:0 auto 15px;max-width:1000px}
+  .brand-mascot {flex:0 0 clamp(80px,17vw,177px);width:clamp(80px,17vw,177px);filter:drop-shadow(0 0 13px #f6bb40aa)}
+  .brand-words {min-width:0;text-align:left}
+  .brand-main {font-size:clamp(2.7rem,9.4vw,7.8rem);letter-spacing:.015em;line-height:.95;text-transform:uppercase;font-weight:900;color:#fff0b3;text-shadow:0 2px 0 #773908,0 4px 0 #4e2507,0 7px 12px #000,0 0 24px #b76b17; }
+  .brand-sub {font-size:clamp(1.05rem,3.3vw,2.9rem);font-style:italic;color:#f7d979;text-align:right;text-shadow:0 2px 8px black}
+  .hero-rule {height:3px;max-width:780px;margin:20px auto;background:linear-gradient(90deg,transparent,#f8cc58,#fff5c3,#f8cc58,transparent);box-shadow:0 0 13px #f6a525}
+  .hero h1 {font-size:clamp(1.4rem,3.5vw,2.9rem);text-transform:uppercase;letter-spacing:.09em;color:#fff5d4;text-shadow:0 2px 6px #000;margin:0 0 14px}
+  .hero-tagline {color:#efc972;font-size:clamp(1.2rem,2.6vw,2rem);font-style:italic;margin-bottom:18px}
+  .hero-copy {max-width:660px;margin:0 auto 26px;color:#f6ebd9;font:clamp(.95rem,1.5vw,1.14rem)/1.6 Arial,sans-serif}
+  .hero-actions {display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:20px}
+  .hero-btn {display:inline-block;padding:13px 25px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font:bold .92rem Arial,sans-serif;border:2px solid #eab34d;transition:transform .2s,box-shadow .2s}
+  .hero-btn:hover {transform:translateY(-3px);box-shadow:0 0 22px #ebb34f80}
+  .hero-btn.primary {color:#170e05;background:linear-gradient(#fff0a2,#e6a72a 54%,#ae650a)}
+  .hero-btn.secondary {color:#ffe6a3;background:#070707c9}
+  .hero-loc {font: .85rem/1.6 Arial,sans-serif;color:#f4d8a2;letter-spacing:.04em}
+  .hero-loc a {color:#ffe4a0}
+  .section-heading {text-align:center;margin:40px auto 0;padding:0 18px;font-size:clamp(1.6rem,3vw,2.6rem);color:#ffe5a1;text-shadow:0 2px 10px #a96727;text-transform:uppercase;letter-spacing:.12em}
+  .bio-section {max-width:820px;margin:20px auto;padding:24px 30px;border:1px solid #9c6819;background:linear-gradient(160deg,#211608,#0b0908);box-shadow:0 0 19px #000}
+  .bio-section p {color:#e3d0aa;text-align:left}
+  .photo-stack {max-width:1200px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px;padding:30px 18px 60px}
+  .photo-item {border:2px solid #996319;border-radius:0;background:linear-gradient(145deg,#241809,#070707);box-shadow:0 0 0 1px #f7d18255,0 14px 24px #0008}
+  .photo-label {color:#ffe1a1;text-transform:uppercase;letter-spacing:.06em;text-shadow:0 2px 8px #a26214;font-size:1.35rem}
+  .price {border-radius:5px;background:linear-gradient(#ffeb9b,#cd8615);color:#1c1005;font-family:Georgia,serif;font-size:1.25rem;border:2px solid #ffe19a}
+  .description {text-align:left;color:#e6d8be}
+  .paypal-button {border-radius:4px;background:linear-gradient(#ffe39a,#d99517)}
+  .tiktok-section {padding:26px 14px 8px}
+  .tiktok-link {border-radius:3px;background:#211609;color:#ffe19a;border-color:#b88626}
+  .contact-section {max-width:900px;border-top:2px solid #bb861f}
+  @media(max-width:580px) {.hero {min-height:88vh;padding:14px 11px}.hero-frame{padding:34px 13px 24px}.brand-lockup{gap:8px}.brand-mascot{flex-basis:77px;width:77px}.brand-main{font-size:clamp(2.2rem,11vw,4rem)}.brand-sub{font-size:clamp(.98rem,4vw,1.5rem)}.hero-btn{width:100%}.hero h1{font-size:1.36rem}.bio-section{margin:16px 10px;padding:22px 16px}}
+
 </style>
 </head>
 <body id="top">
-<div class="card-wrapper">
-<img alt="Baylors Custom Creations — Division of B4 Lighting LLC" class="card-image" src="FullSizeRender.jpeg"/>
-<div class="hotspots">
-<a class="hotspot hs-phone" href="tel:+15092052006" title="Call (509) 205-2006"></a>
-<a class="hotspot hs-email" href="mailto:sales@b4lighting.com" title="Email sales@b4lighting.com"></a>
-<a class="hotspot hs-address" href="https://maps.google.com/?q=34013+S+Cantera+St,+Kennewick,+WA+99338" rel="noopener" target="_blank" title="Get directions"></a>
-<a class="hotspot hs-website" href="https://B4Lighting.com" rel="noopener" target="_blank" title="Visit B4Lighting.com"></a>
-<a class="hotspot hs-facebook" href="https://www.facebook.com/profile.php?id=61586170517033" rel="noopener" target="_blank" title="Facebook"></a>
-<a class="hotspot hs-tiktok" href="https://www.tiktok.com/@johnbaylor953" rel="noopener" target="_blank" title="TikTok"></a>
-</div>
-</div>
+<header class="hero" aria-label="B4 Lighting welcome">
+  <div class="hero-frame">
+    <p class="eyebrow">Handcrafted industrial lighting • One-of-a-kind designs</p>
+    <div class="brand-lockup">
+      <svg class="brand-mascot" viewBox="0 0 160 240" role="img" aria-label="Baylor's light bulb workshop mascot">
+        <defs><linearGradient id="bulbg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9cf"/><stop offset=".65" stop-color="#f9d850"/><stop offset="1" stop-color="#c98e18"/></linearGradient></defs>
+        <g stroke="#120d08" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M80 5v20M19 28l15 16M141 28l-15 16M1 90h21M159 90h-21" stroke="#ffd659" stroke-width="8"/>
+        <path d="M80 28c-42 0-64 30-62 64 1 26 17 35 26 51h72c9-16 26-25 26-51 2-34-20-64-62-64z" fill="url(#bulbg)"/>
+        <path d="M45 143h70v21H45zM50 164h60v18H50z" fill="#aab0b7"/>
+        <path d="M62 65c-7 5-6 14 1 19s17-3 17-11c0 8 10 16 17 11s8-14 1-19M63 84l9 53M97 84l-9 53" fill="none" stroke-width="3"/>
+        <path d="M59 182h42v15H59z" fill="#bfc1c4"/>
+        <path d="M59 193l-19 25h-19v12h39l20-28 20 28h39v-12h-19l-19-25" fill="#aab0b7"/>
+        <path d="M44 160L17 171v-21H7v40h18l24-12M116 160l27 11v-21h10v40h-18l-24-12" fill="#aab0b7"/>
+        <path d="M48 152h64" stroke="#fff8d0" stroke-width="3"/>
+        </g>
+      </svg>
+      <div class="brand-words"><div class="brand-main">BAYLOR'S</div><div class="brand-sub">Custom Creations</div></div>
+    </div>
+    <div class="hero-rule"></div>
+    <h1>B4 Lighting <span aria-hidden="true">⚙</span> Art That Works</h1>
+    <p class="hero-tagline">Industrial craftsmanship. Brilliantly reimagined.</p>
+    <p class="hero-copy">One-of-a-kind lamps handcrafted from industrial pipe, beautiful wood, vintage finds, and repurposed pieces. Designed to be enjoyed and built to be used.</p>
+    <div class="hero-actions">
+      <a class="hero-btn primary" href="#collection">Explore the Lamps ↓</a>
+      <a class="hero-btn secondary" href="#about">Our Story</a>
+      <a class="hero-btn secondary" href="#contact">Contact Us</a>
+    </div>
+    <p class="hero-loc">Shop locally with free local delivery • Also available at Ragtime Antiques in downtown Richland, Washington</p>
+  </div>
+</header>
 <div class="tiktok-section">
 <a class="tiktok-link" href="https://www.tiktok.com/@johnbaylor953" rel="noopener" target="_blank">
 <svg fill="#c9a227" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52V6.75a4.85 4.85 0 0 1-1-.06z"></path></svg>
@@ -83,6 +144,7 @@
 
   </a>
 </div>
+<h2 class="section-heading" id="about">Built by Hand. Made to Shine.</h2>
 <div class="bio-section">
 <p>For many years, I worked in the automotive industry, developing hands-on skills in repair, fabrication, and creative problem-solving. In 2025, I decided to turn my passion for building into something more personal by starting B4 Lighting. Today, I create one-of-a-kind custom lamps using a combination of vintage, reclaimed, and modern parts, giving each piece its own unique character and style. When I'm not in the workshop, I enjoy spending time with my wife, our dog Buddy—who's usually right by my side while I work—our kids Molly and Justin, and our newest addition to the family, our grandbaby Autumn.    B4 Lighting proudly serves local customers with free delivery. You can also find a selection of our handcrafted lamps in person at Ragtime Antiques in Richland, Washington.
 
@@ -94,6 +156,7 @@ I’d love to offer shipping, but because these lamps are handcrafted using soli
 
 My goal is to keep my prices fair while ensuring each lamp arrives safely, so I’m currently offering local delivery only. I appreciate your support and understanding as B4 Lighting continues to grow.</p>
 </div>
+<h2 class="section-heading" id="collection">The B4 Lighting Collection</h2>
 <div class="photo-stack"><div class="photo-item">
 <div class="photo-label">The Lineman</div>
 <div class="price">$275</div>
@@ -205,7 +268,7 @@ My goal is to keep my prices fair while ensuring each lamp arrives safely, so I�
 <img alt="B4 Lighting Showcase" src="IMG_9400.jpeg"/>
 <p class="description">A final gallery view of several B4 Lighting lamps photographed together during sunrise. This showcase image captures the warmth, industrial character, and handcrafted style that tie the collection together.</p>
 </div></div>
-<section class="contact-section">
+<section class="contact-section" id="contact">
 <h2>Contact B4 Lighting</h2>
 <p>
     Have a question about a lamp or custom piece?<br/>
