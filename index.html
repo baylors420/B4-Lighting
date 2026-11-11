@@ -124,14 +124,13 @@
   .hero-approved-links .cta-contact {left:63%;top:79%;width:20%;height:9%;}
   @media(max-width:580px){.hero.has-approved{min-height:0;padding:0;}}
 
-  /* Roomier single-page lamp gallery: three cards across on large screens,
-     larger uncropped photos, with compact text spacing. */
+  /* Larger two-column lamp gallery; final showcase photo spans full width. */
   .photo-stack {
-    max-width: 1180px;
+    max-width: 1400px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 295px), 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
     padding: 24px 16px 46px;
     align-items: stretch;
   }
@@ -143,12 +142,12 @@
     height: 100%;
     overflow: hidden;
   }
-  .photo-stack .photo-item > img {
+  .photo-stack > .photo-item:not(:last-child) > img {
     display: block;
-    width: min(100%, 285px);
-    height: 305px;
-    max-width: 285px;
-    max-height: 305px;
+    width: min(100%, 420px);
+    height: 420px;
+    max-width: 420px;
+    max-height: 420px;
     margin: 0 auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -158,9 +157,9 @@
     position: relative;
     display: grid;
     place-items: center;
-    width: min(100%, 285px);
-    max-width: 285px;
-    aspect-ratio: 285 / 305;
+    width: min(100%, 420px);
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
     margin: 0 auto;
     flex-shrink: 0;
     background-color: #1a120b;
@@ -179,7 +178,7 @@
   }
   .new-lamp-photos-ready .lamp-art .awaiting-photo { display: none; }
   .photo-stack .photo-label {
-    font-size: 1.14rem;
+    font-size: 1.12rem;
     min-height: 2.3em;
     display: grid;
     place-items: center;
@@ -194,15 +193,36 @@
   .photo-stack .paypal-wrap { margin-top: auto; padding: 11px 12px 18px; }
   .photo-stack .lamp-contact { text-align: center; margin-top: auto; padding: 11px 12px 18px; }
   .photo-stack .lamp-contact a { color: #f0cf63; text-decoration: underline; }
-  @media (max-width: 650px) {
+  .photo-stack > .photo-item:last-child { grid-column: 1 / -1; }
+  .photo-stack > .photo-item:last-child > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  @media (max-width: 900px) {
     .photo-stack {
       grid-template-columns: 1fr;
-      max-width: 430px;
+      max-width: 700px;
       margin: 0 auto;
       gap: 16px;
       padding: 18px 12px 38px;
     }
-    .photo-stack .photo-item > img { height: 305px; }
+    .photo-stack > .photo-item:last-child { grid-column: auto; }
+    .photo-stack > .photo-item:not(:last-child) > img {
+      width: min(100%, 360px);
+      height: 360px;
+      max-width: 360px;
+      max-height: 360px;
+    }
+    .photo-stack .lamp-art,
+    .photo-stack .lamp-placeholder {
+      width: min(100%, 360px);
+      max-width: 360px;
+    }
   }
 
 </style>
