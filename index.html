@@ -124,12 +124,13 @@
   .hero-approved-links .cta-contact {left:63%;top:79%;width:20%;height:9%;}
   @media(max-width:580px){.hero.has-approved{min-height:0;padding:0;}}
 
-  /* Consistent compact gallery; don't let any photo determine a card's width. */
+  /* Roomier single-page lamp gallery: three cards across on large screens,
+     larger uncropped photos, with compact text spacing. */
   .photo-stack {
-    max-width: 1130px;
+    max-width: 1180px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min(100%,235px),1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 295px), 1fr));
     gap: 18px;
     padding: 24px 16px 46px;
     align-items: stretch;
@@ -144,21 +145,22 @@
   }
   .photo-stack .photo-item > img {
     display: block;
-    width: min(100%,210px);
-    height: 275px;
-    max-width: 210px;
-    max-height: 275px;
+    width: min(100%, 285px);
+    height: 305px;
+    max-width: 285px;
+    max-height: 305px;
     margin: 0 auto;
     object-fit: contain;
     flex-shrink: 0;
   }
-  .photo-stack .lamp-art,.photo-stack .lamp-placeholder {
+  .photo-stack .lamp-art,
+  .photo-stack .lamp-placeholder {
     position: relative;
     display: grid;
     place-items: center;
-    width: min(100%,210px);
-    max-width: 210px;
-    aspect-ratio: 3 / 4;
+    width: min(100%, 285px);
+    max-width: 285px;
+    aspect-ratio: 285 / 305;
     margin: 0 auto;
     flex-shrink: 0;
     background-color: #1a120b;
@@ -167,23 +169,40 @@
     border: 1px solid #5f411e;
     font: italic .95rem Georgia, serif;
   }
-  .photo-stack .lamp-art .awaiting-photo,.photo-stack .lamp-placeholder span {padding:14px;}
+  .photo-stack .lamp-art .awaiting-photo,
+  .photo-stack .lamp-placeholder span { padding: 14px; }
   .new-lamp-photos-ready .photo-stack .lamp-art {
     background-image: url("b4-new-lamps.avif?v=20261110-2");
     background-size: 400% 200%;
     background-position: var(--sx) var(--sy);
     background-repeat: no-repeat;
   }
-  .new-lamp-photos-ready .lamp-art .awaiting-photo {display:none;}
-  .photo-stack .photo-label{font-size:1.14rem;min-height:2.8em;display:grid;place-items:center;padding:13px 12px 6px;}
-  .photo-stack .price {font-size:1.05rem;margin-bottom:12px;}
-  .photo-stack .description {font-size:.93rem;line-height:1.55;padding:14px 14px 8px;}
-  .photo-stack .paypal-wrap {margin-top:auto;padding:12px 12px 20px;}
-  .photo-stack .lamp-contact {text-align:center;margin-top:auto;padding:12px 12px 22px;}
-  .photo-stack .lamp-contact a{color:#f0cf63;text-decoration:underline;}
-  @media(max-width:550px) {
-    .photo-stack {grid-template-columns:1fr;max-width:390px;margin:0 auto;}
-    .photo-stack .photo-item > img {height:275px;}
+  .new-lamp-photos-ready .lamp-art .awaiting-photo { display: none; }
+  .photo-stack .photo-label {
+    font-size: 1.14rem;
+    min-height: 2.3em;
+    display: grid;
+    place-items: center;
+    padding: 11px 12px 5px;
+  }
+  .photo-stack .price { font-size: 1.08rem; margin-bottom: 10px; }
+  .photo-stack .description {
+    font-size: .93rem;
+    line-height: 1.47;
+    padding: 10px 14px 7px;
+  }
+  .photo-stack .paypal-wrap { margin-top: auto; padding: 11px 12px 18px; }
+  .photo-stack .lamp-contact { text-align: center; margin-top: auto; padding: 11px 12px 18px; }
+  .photo-stack .lamp-contact a { color: #f0cf63; text-decoration: underline; }
+  @media (max-width: 650px) {
+    .photo-stack {
+      grid-template-columns: 1fr;
+      max-width: 430px;
+      margin: 0 auto;
+      gap: 16px;
+      padding: 18px 12px 38px;
+    }
+    .photo-stack .photo-item > img { height: 305px; }
   }
 
 </style>
