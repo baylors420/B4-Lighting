@@ -124,16 +124,67 @@
   .hero-approved-links .cta-contact {left:63%;top:79%;width:20%;height:9%;}
   @media(max-width:580px){.hero.has-approved{min-height:0;padding:0;}}
 
-  /* Uniform collection cards, with a real photograph in every finished listing. */
-  .photo-stack { align-items:stretch; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); }
-  .photo-stack .photo-item { display:flex; flex-direction:column; min-width:0; height:100%; }
-  .photo-stack .paypal-wrap { margin-top:auto; }
-  .photo-stack img:not(.hero-approved) { aspect-ratio:3/4; max-height:none; object-fit:contain; }
-  .lamp-art,.lamp-placeholder { width:100%; aspect-ratio:3/4; position:relative; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 42%,#51341b 0%,#211509 55%,#100b08 100%); color:#e3bc67; text-align:center; font:italic 1rem Georgia,serif; border-top:1px solid #6c491e; border-bottom:1px solid #6c491e; }
-  .lamp-art .awaiting-photo,.lamp-placeholder span { padding:18px; }
-  .new-lamp-photos-ready .lamp-art { background-image:url("b4-new-lamps.avif"); background-size:400% 200%; background-position:var(--sx) var(--sy); background-repeat:no-repeat; }
-  .new-lamp-photos-ready .lamp-art .awaiting-photo { display:none; }
-  @media(max-width:580px) { .photo-stack {grid-template-columns:1fr;} }
+  /* Consistent compact gallery; don't let any photo determine a card's width. */
+  .photo-stack {
+    max-width: 1130px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,235px),1fr));
+    gap: 18px;
+    padding: 24px 16px 46px;
+    align-items: stretch;
+  }
+  .photo-stack > .photo-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .photo-stack .photo-item > img {
+    display: block;
+    width: min(100%,210px);
+    height: 275px;
+    max-width: 210px;
+    max-height: 275px;
+    margin: 0 auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .photo-stack .lamp-art,.photo-stack .lamp-placeholder {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%,210px);
+    max-width: 210px;
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+    flex-shrink: 0;
+    background-color: #1a120b;
+    color: #e7c47b;
+    text-align: center;
+    border: 1px solid #5f411e;
+    font: italic .95rem Georgia, serif;
+  }
+  .photo-stack .lamp-art .awaiting-photo,.photo-stack .lamp-placeholder span {padding:14px;}
+  .new-lamp-photos-ready .photo-stack .lamp-art {
+    background-image: url("b4-new-lamps.avif?v=20261110-2");
+    background-size: 400% 200%;
+    background-position: var(--sx) var(--sy);
+    background-repeat: no-repeat;
+  }
+  .new-lamp-photos-ready .lamp-art .awaiting-photo {display:none;}
+  .photo-stack .photo-label{font-size:1.14rem;min-height:2.8em;display:grid;place-items:center;padding:13px 12px 6px;}
+  .photo-stack .price {font-size:1.05rem;margin-bottom:12px;}
+  .photo-stack .description {font-size:.93rem;line-height:1.55;padding:14px 14px 8px;}
+  .photo-stack .paypal-wrap {margin-top:auto;padding:12px 12px 20px;}
+  .photo-stack .lamp-contact {text-align:center;margin-top:auto;padding:12px 12px 22px;}
+  .photo-stack .lamp-contact a{color:#f0cf63;text-decoration:underline;}
+  @media(max-width:550px) {
+    .photo-stack {grid-template-columns:1fr;max-width:390px;margin:0 auto;}
+    .photo-stack .photo-item > img {height:275px;}
+  }
 
 </style>
 </head>
@@ -285,17 +336,88 @@
 <div class="paypal-wrap"><a class="paypal-button" href="https://www.paypal.com/ncp/payment/JSNQ2XXU3BADN" rel="noopener" target="_blank">Buy Now with PayPal</a></div>
 </div><div class="photo-item"><div class="sold-badge">SOLD</div><div class="photo-label">The Dairyman</div><img alt="The Dairyman — sold" src="IMG_9394.jpeg"/><p class="description">A sold, one-of-a-kind B4 Lighting creation, featured here as part of our past work.</p></div>
 <div class="photo-item"><div class="sold-badge">SOLD</div><div class="photo-label">Triple Helix</div><img alt="Triple Helix — sold" src="IMG_9402.jpeg"/><p class="description">A sold, one-of-a-kind B4 Lighting creation, featured here as part of our past work.</p></div>
-<div class="photo-item"><div class="photo-label">The Airwave</div><div class="price">$165</div><div class="lamp-art" role="img" aria-label="The Airwave lamp photograph" style="--sx:100.000%;--sy:100%"><span class="awaiting-photo">Photo being added</span></div><p class="description">The Airwave began as a vintage Sonora AM radio. Now transformed into a lamp and Bluetooth speaker, it features two perforated metal shades above the radio cabinet. The original volume knob operates the lighting, including on/off and dimming.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">The Airwave began as a vintage Sonora AM radio and was reimagined as a one-of-a-kind lamp with modern Bluetooth functionality. Twin perforated metal shades rise above the radio cabinet. The original volume knob has been repurposed to control the lights, including on/off and dimming. Every B4 Lighting lamp is individually handcrafted.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div><p class="description">A nonworking vintage AM radio brought back to life as a distinctive light and Bluetooth speaker. Two lamps mounted on painted half-inch industrial pipe rise above the original radio cabinet. The original volume knob controls the lights, including on/off and dimming, while a Bluetooth module adds modern functionality. The original power cord has been retained.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">Workshop Guardian</div><div class="price">$95</div><div class="lamp-art" role="img" aria-label="Workshop Guardian lamp photograph" style="--sx:66.667%;--sy:100%"><span class="awaiting-photo">Photo being added</span></div><p class="description">Workshop Guardian is a playful workshop-inspired piece built from industrial pipe and a wood base. Its distinctive head and paired light elements give the design a personality of its own.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">Workshop Guardian is a playful industrial design inspired by a protective shop helper, built from black pipe and mounted on a wood base. Its distinctive head and paired light elements give it a character all its own while preserving the practical craftsmanship of B4 Lighting.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div><p class="description">An original B4 Lighting workshop-inspired lamp, handcrafted as functional industrial art. More photographs and construction details will be added to this gallery listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">The Hangover</div><div class="price">$145</div><div class="lamp-art" role="img" aria-label="The Hangover lamp photograph" style="--sx:0.000%;--sy:0%"><span class="awaiting-photo">Photo being added</span></div><p class="description">A handcrafted industrial lamp made from silver-finished pipe and fittings with a suspended glass shade. A solid wood base, integrated switch, and practical industrial design make this a distinctive piece of functional art.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">A handcrafted industrial lamp built from silver-finished pipe and fittings with a hanging hammered-glass shade for a distinctive textured look. Its wood base, integrated switch, and built-in outlet box bring practical function to a clean industrial design. Every B4 Lighting lamp is individually handcrafted, making each one a unique piece of functional art.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div><p class="description">A one-of-a-kind handcrafted B4 Lighting design. Full photographs and construction specifications will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="sold-badge">SOLD</div><div class="photo-label">The Forge Master</div><div class="price">$125 — SOLD</div><div class="lamp-art" role="img" aria-label="The Forge Master lamp photograph" style="--sx:0.000%;--sy:100%"><span class="awaiting-photo">Photo being added</span></div><p class="description">The Forge Master combines black industrial pipe with a polished stone base and a warm amber globe bulb. This one-of-a-kind B4 Lighting creation has sold.</p></div><p class="description">The Forge Master is built from black industrial pipe mounted on a polished stone base, giving it a strong, grounded look with a refined finish. A warm amber globe bulb highlights the contrast between rugged metalwork and the natural stone. This one-of-a-kind B4 Lighting lamp has sold and remains part of our gallery.</p><p class="description" style="color:#f0cf63;text-align:center">Previously sold · Gallery showcase</p></div><p class="description">A custom industrial-style B4 Lighting lamp, built as a functional piece of art. Full photographs and construction details will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">Iris</div><div class="price">$65</div><div class="lamp-art" role="img" aria-label="Iris lamp photograph" style="--sx:33.333%;--sy:0%"><span class="awaiting-photo">Photo being added</span></div><p class="description">Iris features a clear glass globe cradled by a dramatic black metal frame that opens like petals around the bulb. The sculptural design brings warm illumination and a striking floral-inspired silhouette.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">Iris features a clear glass globe cradled in a dramatic black metal frame that opens like petals around the bulb, giving the lamp its floral-inspired character. The open design allows the warm glow of the bulb to stand out while creating a sculptural look even when the lamp is off. Every B4 Lighting lamp is individually handcrafted.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div>
-<div class="photo-item"><div class="sold-badge">SOLD</div><div class="photo-label">The Charging Post</div><div class="price">$180 — SOLD</div><div class="lamp-art" role="img" aria-label="The Charging Post lamp photograph" style="--sx:66.667%;--sy:0%"><span class="awaiting-photo">Photo being added</span></div><p class="description">Built on a solid wood base with black industrial pipe, The Charging Post combines a white textured glass shade, an integrated light switch, and a built-in outlet with USB charging. This one-of-a-kind lamp has sold.</p></div><p class="description">The Charging Post blends lighting and convenience into one functional design. Built on a solid wood base with black industrial pipe, it features a white textured glass shade, an integrated light switch, and a built-in outlet with USB charging ports. This one-of-a-kind B4 Lighting creation has sold and is featured as an example of our custom work.</p><p class="description" style="color:#f0cf63;text-align:center">Previously sold · Gallery showcase</p></div>
-<div class="photo-item"><div class="photo-label">Golden Blossom</div><div class="price">$95</div><div class="lamp-art" role="img" aria-label="Golden Blossom lamp photograph" style="--sx:100.000%;--sy:0%"><span class="awaiting-photo">Photo being added</span></div><p class="description">Golden Blossom features a frosted floral-style shade, a gold-finished stem, and a distressed black-and-gold base. Built-in outlets and USB charging bring modern convenience to its vintage-inspired style.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">Golden Blossom brings a vintage feel to the B4 Lighting collection with its frosted floral-style shade, gold-finished stem, and distressed black-and-gold base. A built-in outlet with USB charging adds modern practicality while preserving the lamp's warm decorative character. Every B4 Lighting lamp is individually handcrafted.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div><p class="description">A handcrafted B4 Lighting creation bringing a decorative character to practical lighting. Photographs and full materials information will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">Edison Cage</div><div class="price">$65</div><div class="lamp-art" role="img" aria-label="Edison Cage lamp photograph" style="--sx:33.333%;--sy:100%"><span class="awaiting-photo">Photo being added</span></div><p class="description">Edison Cage features a hanging industrial cage-style shade suspended from black pipe over a solid wood base. The exposed bulb gives this workshop-inspired design a warm, vintage glow.</p><p class="description" style="text-align:center;color:#f0cf63">Contact us for availability and ordering.</p></div><p class="description">Edison Cage features a hanging cage-style shade suspended from black industrial pipe over a wood base, giving the lamp a bold workshop-inspired look. The exposed bulb and aged cage details create a warm industrial feel while keeping the design clean and functional. Every B4 Lighting lamp is individually handcrafted.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph coming soon · Contact us for details</p></div><p class="description">A unique B4 Lighting creation featuring an industrial-inspired lighting design. Full photographs and construction details will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">Constellation</div><div class="price">$55 each</div><div class="lamp-placeholder"><span>Photo coming soon</span></div><p class="description">An individually priced B4 Lighting lighting design. Full photographs and construction specifications will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">The Timing Master</div><div class="price">$145</div><div class="lamp-placeholder"><span>Photo coming soon</span></div><p class="description">Automotive inspiration becomes functional lighting: a moving timing chain and a composition of industrial pipe, gears, and fittings sit on a stained oak base. Two warm 2700K spiral LED bulbs illuminate the piece, with a rocker switch for on/off control.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
-<div class="photo-item"><div class="photo-label">The Gilded Pair</div><div class="price">$180 pair</div><div class="lamp-placeholder"><span>Photo coming soon</span></div><p class="description">A matching pair of handcrafted B4 Lighting lamps offered together. Full photographs and individual construction details will be added to this listing.</p><p class="description" style="color:#f0cf63;text-align:center">Photograph being added · Contact us for details</p></div>
+<div class="photo-item">
+  
+  <div class="photo-label">The Hangover</div>
+  <div class="price">$145</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of The Hangover" style="--sx:0.000%;--sy:0%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">A handcrafted industrial lamp built from silver-finished pipe and fittings with a hanging hammered-glass shade for a distinctive textured look. The design combines practical function with clean industrial styling, featuring a wood base, integrated switch, and built-in outlet box for added usefulness.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20The%20Hangover">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  
+  <div class="photo-label">Iris</div>
+  <div class="price">$65</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of Iris" style="--sx:33.333%;--sy:0%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">Iris features a clear glass globe cradled in a dramatic black metal frame that opens like petals around the bulb, giving the lamp its floral-inspired character. The open design allows the warm glow of the bulb to stand out while creating a sculptural look even when the lamp is off.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20Iris">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  <div class="sold-badge">SOLD</div>
+  <div class="photo-label">The Charging Post</div>
+  <div class="price">$180 — SOLD</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of The Charging Post" style="--sx:66.667%;--sy:0%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">The Charging Post blends lighting and convenience. Built on a solid wood base with black industrial pipe, it features a white textured glass shade, an integrated light switch, and a built-in outlet with USB charging ports. This one-of-a-kind creation has sold.</p>
+  
+</div>
+<div class="photo-item">
+  
+  <div class="photo-label">Golden Blossom</div>
+  <div class="price">$95</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of Golden Blossom" style="--sx:100.000%;--sy:0%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">Golden Blossom brings a vintage feel to the collection with its frosted floral-style shade, gold-finished stem, and distressed black-and-gold base. A built-in outlet with USB charging adds modern practicality while preserving its warm decorative character.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20Golden%20Blossom">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  <div class="sold-badge">SOLD</div>
+  <div class="photo-label">The Forge Master</div>
+  <div class="price">$125 — SOLD</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of The Forge Master" style="--sx:0.000%;--sy:100%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">The Forge Master is built from black industrial pipe mounted on a polished stone base, with a warm amber globe bulb that highlights the contrast between rugged metalwork and natural stone. This one-of-a-kind creation has sold.</p>
+  
+</div>
+<div class="photo-item">
+  
+  <div class="photo-label">Edison Cage</div>
+  <div class="price">$65</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of Edison Cage" style="--sx:33.333%;--sy:100%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">Edison Cage features a hanging cage-style shade suspended from black industrial pipe over a wood base, giving the lamp a bold workshop-inspired look. The exposed bulb and aged cage details create a warm industrial feel.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20Edison%20Cage">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  
+  <div class="photo-label">Workshop Guardian</div>
+  <div class="price">$95</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of Workshop Guardian" style="--sx:66.667%;--sy:100%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">Workshop Guardian is a playful industrial design inspired by a protective shop helper, built from black pipe and mounted on a wood base. Its distinctive head and paired light elements give it character while preserving the B4 Lighting style.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20Workshop%20Guardian">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  
+  <div class="photo-label">The Airwave</div>
+  <div class="price">$165</div>
+  <div class="lamp-art" role="img" aria-label="Photograph of The Airwave" style="--sx:100.000%;--sy:100%"><span class="awaiting-photo">Photograph loading</span></div>
+  <p class="description">The Airwave began as a vintage Sonora AM radio and was reimagined into a lamp with Bluetooth functionality. Twin perforated metal shades rise above the original radio cabinet. The original volume knob has been repurposed for lighting on/off and dimming control.</p>
+  <p class="lamp-contact"><a href="mailto:sales@b4lighting.com?subject=Inquiry%20about%20The%20Airwave">Ask about this lamp</a></p>
+</div>
+<div class="photo-item">
+  <div class="photo-label">Constellation</div>
+  <div class="price">$55 each</div>
+  <div class="lamp-placeholder" role="img" aria-label="Constellation photograph pending"><span>Photograph coming soon</span></div>
+  <p class="description">A handcrafted B4 Lighting design. Additional photographs and construction details are being prepared for the gallery.</p>
+</div>
+<div class="photo-item">
+  <div class="photo-label">The Timing Master</div>
+  <div class="price">$145</div>
+  <div class="lamp-placeholder" role="img" aria-label="The Timing Master photograph pending"><span>Photograph coming soon</span></div>
+  <p class="description">Automotive inspiration becomes functional lighting: a moving timing chain and a composition of industrial pipe, gears, and fittings sit on a stained oak base. Two warm 2700K LED bulbs illuminate the piece, with rocker-switch control.</p>
+</div>
+<div class="photo-item">
+  <div class="photo-label">The Gilded Pair</div>
+  <div class="price">$180 pair</div>
+  <div class="lamp-placeholder" role="img" aria-label="The Gilded Pair photograph pending"><span>Photograph coming soon</span></div>
+  <p class="description">A matching pair of handcrafted B4 Lighting lamps. Photographs and individual construction details are being prepared for the gallery.</p>
+</div>
 <div class="photo-item">
 <div class="photo-label">Workshop</div>
 <img alt="Workshop" src="IMG_9403.jpeg"/>
@@ -342,9 +464,9 @@ Find our lamps at Ragtime Antiques in downtown Richland, WA<br/>
 </script>
 <script>
 (function(){
-  var preview = new Image();
-  preview.onload = function(){ document.body.classList.add('new-lamp-photos-ready'); };
-  preview.src = 'b4-new-lamps.avif';
+  var photo = new Image();
+  photo.onload = function(){ document.body.classList.add('new-lamp-photos-ready'); };
+  photo.src = 'b4-new-lamps.avif?v=20261110-2';
 })();
 </script>
 </body>
